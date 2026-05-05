@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:infinity_consultants_assingment/screens/spend_summary_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,7 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -32,18 +33,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Spend Summary")),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Spend Summary',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.grey.shade100,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-          ],
-        ),
-      ),
+      home: const SpendSummaryScreen(),
     );
   }
 }
